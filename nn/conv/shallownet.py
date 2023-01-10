@@ -14,8 +14,7 @@ class ShallowNet:
         if K.image_data_format() == "channels_first":
             inputShape = (depth,height,width)
         
-        model.add(Conv2D(32,filterShape, padding="same"),
-            input_shape=inputShape)
+        model.add(Conv2D(32,filterShape, padding="same", input_shape=inputShape))
         model.add(Flatten())
         model.add(Dense(classes))
         model.add(Activation("softmax"))
