@@ -19,13 +19,14 @@ class TrainingMonitor(BaseLogger):
 
         if self.jsonPath is not None:
             if os.path.exists(self.jsonPath):
-                self.H = json.loads(open(self.jsonPath).read)
+                self.H = json.loads(open(self.jsonPath).read())
 
                 if self.startAt > 0:
                     for k in self.H.keys():
                         self.H[k] = self.H[k][:self.startAt]
     
     def on_epoch_end(self, epoch, logs={}):
+        
         for (k,v) in logs.items():
             l = self.H.get(k, [])
             l.append(float(v))
