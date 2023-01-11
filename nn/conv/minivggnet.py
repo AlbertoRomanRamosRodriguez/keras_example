@@ -12,7 +12,7 @@ class MiniVGGNet:
     @staticmethod
     def build(width, height, depth, classes):
         model = Sequential()
-        inputShape = (heigh, width, depth)
+        inputShape = (height, width, depth)
         kernelShape = (3,3)
         chanDim = -1
 
