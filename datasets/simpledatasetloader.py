@@ -15,8 +15,11 @@ class SimpleDatasetLoader:
 
         for (i, imagePath) in enumerate(imagePaths):
             image = cv2.imread(imagePath)
-            label = imagePath.split(sep)[-2]
+            label= imagePath.split(sep)[-2]
 
+            if verbose > 0 and i > 0 and (i + 1) % verbose == 0:
+                print(f"[INFO] processing {imagePath.split(sep)[-1]} {i+1}/{len(imagePaths)}")
+            
             if self.preprocessors is not None:
                 for p in self.preprocessors:
                     image = p.preprocess(image)
@@ -25,6 +28,6 @@ class SimpleDatasetLoader:
             labels.append(label)
 
             if verbose > 0 and i > 0 and (i + 1) % verbose == 0:
-                print(f"[INFO] processed {i+1}/{len(imagePaths)}")
+                print(f"[INFO] processed {imagePath.split(sep)[-1]}")
 
         return (np.array(data), np.array(labels))
