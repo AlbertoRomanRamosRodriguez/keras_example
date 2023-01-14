@@ -1,3 +1,4 @@
-**/__pycache__/
+**/__pycache__
 datasets/__pycache__/simpledatasetloader.cpython-310.pyc
+preprocessing/__pycache__/imagetoarrayprocessor.cpython-310.pyc
 preprocessing/__pycache__/imagetoarrayprocessor.cpython-310.pyc
