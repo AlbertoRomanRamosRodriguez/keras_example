@@ -26,7 +26,7 @@ class AlexNet:
             96,
             (11,11),
             strides=(4,4),
-            inputShape=inputShape,
+            input_shape=inputShape,
             padding="same",
             kernel_regularizer=L2(reg)
         ))
